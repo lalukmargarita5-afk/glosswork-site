@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T12:00:00Z",
+  "title": "Design System: GLOSSWORK",
+  "extensions": {
+    "colorMeta": {
+      "bg": { "role": "neutral", "displayName": "Ночной бокс", "tonalRamp": ["#020302", "#060907", "#0c130f", "#18241d", "#3a4a40", "#6a7d71", "#a3b5aa", "#eef4f0"] },
+      "bg-raise": { "role": "neutral", "displayName": "Приподнятый бокс", "tonalRamp": ["#030504", "#060907", "#0c130f", "#16221b", "#2c3b32", "#56685d", "#93a69a", "#dfe8e2"] },
+      "bg-field": { "role": "neutral", "displayName": "Поле в фокусе", "tonalRamp": ["#040705", "#0a110d", "#0f1813", "#1b2a21", "#33463a", "#5f7466", "#9bb0a2", "#e2ece5"] },
+      "line": { "role": "neutral", "displayName": "Волосяная линия", "canonical": "rgba(214, 255, 232, 0.1)" },
+      "line-strong": { "role": "neutral", "displayName": "Сильная линия", "canonical": "rgba(214, 255, 232, 0.22)" },
+      "text": { "role": "neutral", "displayName": "Белый текст", "tonalRamp": ["#1d2420", "#3a4540", "#5c6a62", "#808f86", "#a3b5aa", "#cfdcd4", "#e2ebe6", "#eef4f0"] },
+      "text-soft": { "role": "neutral", "displayName": "Мягкий текст" },
+      "muted": { "role": "neutral", "displayName": "Приглушённый" },
+      "text-faint": { "role": "neutral", "displayName": "Тихий" },
+      "placeholder": { "role": "neutral", "displayName": "Подсказка" },
+      "on-plate": { "role": "neutral", "displayName": "Белый на плашке" },
+      "green-600": { "role": "primary", "displayName": "Изумруд лака", "tonalRamp": ["#04150e", "#0b4430", "#0e5a3e", "#0f7550", "#14956a", "#2fbb86", "#48dba0", "#c9ffe4"] },
+      "green-500": { "role": "primary", "displayName": "Светлый изумруд" },
+      "green-300": { "role": "primary", "displayName": "Неоновая мята", "tonalRamp": ["#04150e", "#0b4430", "#0f7550", "#14956a", "#2fbb86", "#48dba0", "#7dffc4", "#c9ffe4"] },
+      "green-700": { "role": "secondary", "displayName": "Глубокий изумруд" },
+      "green-800": { "role": "secondary", "displayName": "Глубокий изумруд, тёмный" },
+      "green-950": { "role": "secondary", "displayName": "Зелёная тьма" },
+      "lamp": { "role": "tertiary", "displayName": "Свет лампы", "tonalRamp": ["#18241d", "#3d5247", "#6a8578", "#9bb9aa", "#c9ffe4", "#dcffee", "#ebfff5", "#f2fff8"] },
+      "danger": { "role": "neutral", "displayName": "Ошибка", "tonalRamp": ["#3a0f0c", "#6b1d17", "#a02f26", "#d4473b", "#f06a5f", "#ff8f86", "#ffb9b3", "#ffe3e0"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Одно слово GLOSSWORK во всю ширину первого экрана; то же слово контуром в подвале." },
+      "headline": { "displayName": "Headline", "purpose": "Заголовки секций, верхний регистр, одно слово на плашке." },
+      "title-lg": { "displayName": "Title Large", "purpose": "Названия услуг в строках." },
+      "title": { "displayName": "Title", "purpose": "Названия шагов процесса." },
+      "lede": { "displayName": "Lede", "purpose": "Лиды секций, цвет muted, до 52ch." },
+      "body": { "displayName": "Body", "purpose": "Основной текст, описания до 46ch." },
+      "body-sm": { "displayName": "Body Small", "purpose": "Сообщения форм, ошибки, юридический текст." },
+      "label": { "displayName": "Label", "purpose": "Кнопки, верхний регистр, разрядка 0.08em." },
+      "label-caps": { "displayName": "Label Caps", "purpose": "Заголовки колонок подвала, логотип, номера шагов." }
+    },
+    "shadows": [
+      { "name": "button-rest", "value": "0 8px 20px -10px rgba(0, 0, 0, 0.8)", "purpose": "Мягкая тёмная подложка сплошной кнопки." },
+      { "name": "button-hover", "value": "0 12px 26px -10px rgba(0, 0, 0, 0.85)", "purpose": "Подложка сплошной кнопки при наведении." },
+      { "name": "panel", "value": "0 40px 90px -40px rgba(0, 0, 0, 0.8)", "purpose": "Панель формы записи, единственная приподнятая поверхность." },
+      { "name": "lamp-glow", "value": "0 0 14px rgba(200, 255, 228, 0.55), 0 0 44px rgba(72, 219, 160, 0.35), 0 18px 60px -10px rgba(72, 219, 160, 0.3)", "purpose": "Включённая лампа шага процесса. Свечение только для источников света." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Общая кривая всех переходов." },
+      { "name": "roll", "value": "transform 0.55s, +16ms на букву, сдвиг -1.25em", "purpose": "Перекрутка текста на ссылках, кнопках, чипах." },
+      { "name": "state-color", "value": "0.3s", "purpose": "Смена цвета и рамки кнопок и чипов." },
+      { "name": "plate-grow", "value": "background-size 0.55s", "purpose": "Плашка под названием услуги растёт слева при наведении." },
+      { "name": "ignite", "value": "0.9s steps(1, end), кадры 0.85/0.15/1/0.35/1", "purpose": "Мигание фар при поджиге." },
+      { "name": "lamps-off-fade", "value": "opacity 0.25s linear, задержка 0.05s", "purpose": "Растровый слой выключенных фар гаснет при включении." },
+      { "name": "beam", "value": "opacity 0.9s, задержка 0.3s", "purpose": "Пучки света фар на полу." },
+      { "name": "tunnel-depth", "value": "прозрачность = сила × (0.4 + 0.6 × близость); лампы 1, отражения стен 0.3, отражения потолка 0.2", "purpose": "Лампы туннеля горят в полную яркость и тают только с глубиной." },
+      { "name": "lamp-sequence", "value": "180ms между лампами; включение 0.5s, свечение 0.8s", "purpose": "Лампы шагов включаются по очереди при появлении в окне (порог 0.45)." },
+      { "name": "parallax", "value": "догон 0.08 за кадр; машина 14/8px, слово -22/-10px, центр туннеля 46/26px", "purpose": "Параллакс сцены от курсора, только точный указатель и без reduced-motion." },
+      { "name": "reduced-motion", "value": "длительности 0.01ms, лампы сразу включены, параллакс выключен", "purpose": "Поведение при prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "steps-3col", "value": "1080px" },
+      { "name": "booking-stack", "value": "860px" },
+      { "name": "mobile", "value": "760px" },
+      { "name": "narrow", "value": "420px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "Главное действие: запись. Изумрудная таблетка с перекруткой текста.",
+      "html": "<button class=\"ds-btn ds-btn-solid\"><span class=\"ds-roll\"><span class=\"ds-ch\" style=\"--i:0\">З</span><span class=\"ds-ch\" style=\"--i:1\">а</span><span class=\"ds-ch\" style=\"--i:2\">п</span><span class=\"ds-ch\" style=\"--i:3\">и</span><span class=\"ds-ch\" style=\"--i:4\">с</span><span class=\"ds-ch\" style=\"--i:5\">а</span><span class=\"ds-ch\" style=\"--i:6\">т</span><span class=\"ds-ch\" style=\"--i:7\">ь</span><span class=\"ds-ch\" style=\"--i:8\">с</span><span class=\"ds-ch\" style=\"--i:9\">я</span></span></button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; border-radius: 999px; font: 500 0.95rem/1 \"Oswald\", \"Arial Narrow\", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid transparent; cursor: pointer; transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-solid { background: var(--green-600, #0f7550); color: #fff; box-shadow: 0 8px 20px -10px rgba(0,0,0,0.8); } .ds-btn-solid:hover { background: var(--green-500, #14956a); box-shadow: 0 12px 26px -10px rgba(0,0,0,0.85); } .ds-btn:focus-visible { outline: 2px solid var(--green-300, #48dba0); outline-offset: 3px; } .ds-roll { display: inline-flex; overflow: hidden; line-height: 1.25; } .ds-ch { display: inline-block; white-space: pre; text-shadow: 0 1.25em 0 currentColor; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); transition-delay: calc(var(--i) * 16ms); } .ds-btn:hover .ds-ch, .ds-btn:focus-visible .ds-ch { transform: translateY(-1.25em); }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Вторичная кнопка, в меню: контурная таблетка, при наведении рамка мятная.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\"><span class=\"ds-roll\"><span class=\"ds-ch\" style=\"--i:0\">З</span><span class=\"ds-ch\" style=\"--i:1\">а</span><span class=\"ds-ch\" style=\"--i:2\">п</span><span class=\"ds-ch\" style=\"--i:3\">и</span><span class=\"ds-ch\" style=\"--i:4\">с</span><span class=\"ds-ch\" style=\"--i:5\">а</span><span class=\"ds-ch\" style=\"--i:6\">т</span><span class=\"ds-ch\" style=\"--i:7\">ь</span><span class=\"ds-ch\" style=\"--i:8\">с</span><span class=\"ds-ch\" style=\"--i:9\">я</span></span></a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; font: 500 0.95rem/1 \"Oswald\", \"Arial Narrow\", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text, #eef4f0); text-decoration: none; border: 1px solid var(--line-strong, rgba(214,255,232,0.22)); background: rgba(6,9,7,0.4); transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line:hover { border-color: var(--green-300, #48dba0); background: rgba(15,117,80,0.25); } .ds-btn-line:focus-visible { outline: 2px solid var(--green-300, #48dba0); outline-offset: 3px; } .ds-roll { display: inline-flex; overflow: hidden; line-height: 1.25; } .ds-ch { display: inline-block; white-space: pre; text-shadow: 0 1.25em 0 currentColor; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); transition-delay: calc(var(--i) * 16ms); } .ds-btn-line:hover .ds-ch, .ds-btn-line:focus-visible .ds-ch { transform: translateY(-1.25em); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Поле полной формы: тёмное, 12px, фокус мятной рамкой.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Машина <span class=\"ds-opt\">необязательно</span></span><input class=\"ds-input\" type=\"text\" placeholder=\"Марка и модель\"></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font-family: \"Golos Text\", system-ui, sans-serif; } .ds-field-label { font-size: 0.9rem; font-weight: 500; color: var(--text-soft, #cfdcd4); } .ds-opt { color: #7f9286; font-weight: 400; margin-left: 6px; } .ds-input { width: 100%; padding: 14px 16px; font: inherit; font-size: 1.0625rem; color: var(--text, #eef4f0); caret-color: var(--green-300, #48dba0); background: var(--bg, #060907); border: 1px solid var(--line-strong, rgba(214,255,232,0.22)); border-radius: 12px; transition: border-color 0.25s, background-color 0.25s; } .ds-input::placeholder { color: #7f9286; } .ds-input:hover { border-color: rgba(214,255,232,0.34); } .ds-input:focus { outline: none; border-color: var(--green-300, #48dba0); background: var(--bg-field, #0f1813); } .ds-input[aria-invalid=\"true\"] { border-color: var(--danger, #ff8f86); }"
+    },
+    {
+      "name": "Service Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Выбор услуги в форме: контурная таблетка, выбранная заливается изумрудом.",
+      "html": "<label class=\"ds-chip\"><input type=\"checkbox\" checked><span class=\"ds-chip-face\">Керамика</span></label> <label class=\"ds-chip\"><input type=\"checkbox\"><span class=\"ds-chip-face\">Плёнка</span></label>",
+      "css": ".ds-chip { position: relative; display: inline-block; cursor: pointer; font-family: \"Golos Text\", system-ui, sans-serif; } .ds-chip input { position: absolute; inset: 0; opacity: 0; cursor: pointer; } .ds-chip-face { display: inline-flex; align-items: center; height: 42px; padding: 0 18px; border: 1px solid var(--line-strong, rgba(214,255,232,0.22)); border-radius: 999px; font-size: 0.95rem; color: var(--text, #eef4f0); transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s; } .ds-chip:hover .ds-chip-face { border-color: var(--green-300, #48dba0); } .ds-chip input:checked + .ds-chip-face { background: var(--green-600, #0f7550); border-color: var(--green-600, #0f7550); color: #fff; } .ds-chip input:focus-visible + .ds-chip-face { outline: 2px solid var(--green-300, #48dba0); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "button-line",
+      "description": "Меню поверх сцены без фона: знак и слово, приглушённые ссылки, контурная кнопка.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\"><svg viewBox=\"0 0 32 32\" width=\"28\" height=\"28\" aria-hidden=\"true\"><rect x=\"2.5\" y=\"2.5\" width=\"27\" height=\"27\" rx=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M9 21.5 20.5 10M14.5 23 23 14.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\"/></svg><span>GLOSSWORK</span></a><nav class=\"ds-links\"><a href=\"#\">Услуги</a><a href=\"#\">Как работаем</a><a href=\"#\">Контакты</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 32px; padding: 22px 24px; background: var(--bg, #060907); } .ds-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--text, #eef4f0); text-decoration: none; font: 600 1.2rem/1 \"Oswald\", \"Arial Narrow\", sans-serif; letter-spacing: 0.14em; } .ds-logo svg { color: var(--green-300, #48dba0); } .ds-links { display: flex; gap: 32px; margin-left: auto; font: 400 0.95rem/1.6 \"Golos Text\", system-ui, sans-serif; } .ds-links a { color: var(--muted, #a3b5aa); text-decoration: none; transition: color 0.3s; } .ds-links a:hover { color: var(--text, #eef4f0); } .ds-links a:focus-visible, .ds-logo:focus-visible { outline: 2px solid var(--green-300, #48dba0); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Green Plate",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "Единственный способ выделить слово: изумрудная плашка под словом заголовка.",
+      "html": "<h2 class=\"ds-h2\">Под светом <span class=\"ds-plate\">видно всё</span></h2>",
+      "css": ".ds-h2 { margin: 0; font: 600 3rem/1.1 \"Oswald\", \"Arial Narrow\", sans-serif; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text, #eef4f0); } .ds-plate { color: #fff; background: linear-gradient(var(--green-600, #0f7550), var(--green-600, #0f7550)) no-repeat 0 58% / 100% 0.96em; padding: 0 0.14em; margin: 0 -0.02em; border-radius: 0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "Строка услуги на волосяных линиях: плашка растёт под названием, стрелка заливается и поворачивается.",
+      "html": "<a class=\"ds-svc\" href=\"#\"><span class=\"ds-svc-name\"><span>Полировка кузова</span></span><span class=\"ds-svc-text\">Убираем голограммы и мелкие царапины, возвращаем глубину цвета.</span><span class=\"ds-svc-arrow\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path d=\"M5 12h13M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>",
+      "css": ".ds-svc { position: relative; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr) 48px; align-items: center; gap: 16px 32px; padding: 28px 16px; color: var(--text, #eef4f0); text-decoration: none; border-block: 1px solid var(--line, rgba(214,255,232,0.1)); background: var(--bg, #060907); isolation: isolate; } .ds-svc::before { content: \"\"; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(15,117,80,0.16), rgba(15,117,80,0.04)); opacity: 0; transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-svc:hover::before, .ds-svc:focus-visible::before { opacity: 1; } .ds-svc-name { font: 500 2rem/1.05 \"Oswald\", \"Arial Narrow\", sans-serif; text-transform: uppercase; } .ds-svc-name > span { background: linear-gradient(var(--green-600, #0f7550), var(--green-600, #0f7550)) no-repeat left / 0% 100%; padding: 0 0.12em; margin-left: -0.12em; transition: background-size 0.55s cubic-bezier(0.16,1,0.3,1); } .ds-svc:hover .ds-svc-name > span, .ds-svc:focus-visible .ds-svc-name > span { background-size: 100% 100%; } .ds-svc-text { color: var(--muted, #a3b5aa); font: 400 1rem/1.6 \"Golos Text\", system-ui, sans-serif; } .ds-svc-arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line-strong, rgba(214,255,232,0.22)); display: grid; place-items: center; color: var(--green-300, #48dba0); transition: background-color 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s, color 0.35s, transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-svc:hover .ds-svc-arrow, .ds-svc:focus-visible .ds-svc-arrow { background: var(--green-600, #0f7550); border-color: var(--green-600, #0f7550); color: #fff; transform: rotate(-45deg); } .ds-svc:focus-visible { outline: 2px solid var(--green-300, #48dba0); outline-offset: -2px; }"
+    },
+    {
+      "name": "Process Step Lamp",
+      "kind": "custom",
+      "refersTo": "panel-form",
+      "description": "Шаг процесса под собственной лампой: тёмная полоса включается светом.",
+      "html": "<div class=\"ds-steps\"><div class=\"ds-step ds-on\"><span class=\"ds-lamp\"></span><span class=\"ds-n\">1</span><h3>Осмотр</h3><p>Смотрим машину под светом, оцениваем состояние лака.</p></div><div class=\"ds-step\"><span class=\"ds-lamp\"></span><span class=\"ds-n\">2</span><h3>Подготовка</h3><p>Мойка, очистка, защита уплотнителей.</p></div></div>",
+      "css": ".ds-steps { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; padding: 24px; background: var(--bg, #060907); } .ds-step { position: relative; padding-top: 44px; } .ds-lamp { position: absolute; top: 0; left: 0; right: 0; height: 6px; border-radius: 6px; background: #18241d; transition: background-color 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.8s cubic-bezier(0.16,1,0.3,1); } .ds-step.ds-on .ds-lamp, .ds-step:hover .ds-lamp { background: var(--lamp, #f2fff8); box-shadow: 0 0 14px rgba(200,255,228,0.55), 0 0 44px rgba(72,219,160,0.35), 0 18px 60px -10px rgba(72,219,160,0.3); } .ds-n { font: 500 0.9rem/1 \"Oswald\", \"Arial Narrow\", sans-serif; color: var(--green-300, #48dba0); letter-spacing: 0.1em; } .ds-step h3 { margin: 12px 0 10px; font: 600 1.5rem/1.1 \"Oswald\", \"Arial Narrow\", sans-serif; text-transform: uppercase; color: var(--text, #eef4f0); } .ds-step p { margin: 0; color: var(--muted, #a3b5aa); font: 400 0.98rem/1.6 \"Golos Text\", system-ui, sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Бокс под светом",
+    "overview": "Сайт устроен как студия детейлинга ночью: почти чёрное пространство с зелёным подтоном, в котором единственный источник яркости — свет. Белые полосы-лампы уходят в перспективу по потолку и стенам, отражаются в глянцевом полу, а у машины загораются фары, когда к ней подходят. Всё остальное подчинено этому свету: текст белый, акценты зелёные, поверхности тёмные и матовые.\n\nПлотность низкая, масштаб крупный. Заголовки набраны узким Oswald в верхнем регистре и работают как вывески на стене бокса; обычный текст — Golos Text, спокойный и читаемый. Выделение в системе одно: зелёная плашка под словом, цвета лака машины. Интерактив подчёркивает ремесло: свет включается в ответ на действие (наведение, скролл, появление в окне), а надписи на всех ссылках и кнопках «перекручиваются» по вертикали.\n\nПеречни не упакованы в карточки: услуги идут строками на волосяных линиях, шаги процесса — колонками под собственной лампой. Единственная приподнятая поверхность — панель формы записи.",
+    "keyCharacteristics": [
+      "Почти чёрный фон с зелёным подтоном, без чистого серого.",
+      "Свет — главный материал: лампы, фары, свечение шагов.",
+      "Одно выделение — зелёная плашка с белым текстом.",
+      "Oswald в верхнем регистре для всего, что «вывеска»; Golos Text для чтения.",
+      "Таблетки для элементов управления, мягкий радиус только у панели формы.",
+      "Перекрутка текста на каждом интерактивном элементе."
+    ],
+    "rules": [
+      { "name": "The Green Plate Rule", "body": "Выделить слово можно только зелёной плашкой (green-600, белый текст). Цветной текст в заголовках не используется; мятный green-300 — для служебных меток, иконок и состояний, не для акцента в тексте.", "section": "colors" },
+      { "name": "The Light Is Not a Brand Color Rule", "body": "Свет ламп и фар остаётся светом: холодный бело-мятный и бело-голубой в свечении фар. Он не превращается в цвет кнопок, плашек или текста.", "section": "colors" },
+      { "name": "The Signage Rule", "body": "Всё, что набрано Oswald, — в верхнем регистре: заголовки, названия, кнопки, логотип, подтверждение отправки формы. Golos Text всегда в обычном регистре.", "section": "typography" },
+      { "name": "The Only Light Glows Rule", "body": "Светится только то, что является светом. Кнопки, карточки и текст не получают свечения.", "section": "elevation" },
+      { "name": "The Light Switches On Rule", "body": "Свет — это состояние, а не декор: фары загораются при наведении на машину (на тач-экранах при начале скролла), лампы шагов включаются по очереди с шагом 180ms, когда процесс появляется в окне. При prefers-reduced-motion всё сразу во включённом состоянии, без анимации.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** выделять ключевое слово заголовка зелёной плашкой (green-600, белый текст) и только ею.",
+      "**Do** давать каждой ссылке, кнопке и чипу перекрутку текста (0.55s, 16ms на букву).",
+      "**Do** набирать заголовки, кнопки и названия Oswald в верхнем регистре, а текст для чтения — Golos Text в обычном.",
+      "**Do** использовать таблетку (999px) для элементов управления и общую кривую cubic-bezier(0.16, 1, 0.3, 1) для переходов.",
+      "**Do** показывать свет как состояние: включение в ответ на наведение, скролл или появление в окне, с полным включённым состоянием при reduced-motion.",
+      "**Do** отделять перечни волосяными линиями (line) и держать описания в пределах 46–52ch."
+    ],
+    "donts": [
+      "**Don't** вводить второй акцентный цвет: кроме зелёной семьи допустимы только свет ламп и фар и цвет ошибки.",
+      "**Don't** красить текст заголовков в зелёный вместо плашки.",
+      "**Don't** давать свечение кнопкам, панелям или тексту: светятся только лампы, фары и полосы туннеля.",
+      "**Don't** использовать жёсткие тени со сдвигом или цветные тени.",
+      "**Don't** заключать перечни в карточки с фоном: услуги — строки на линиях, шаги — колонки под лампой.",
+      "**Don't** использовать светлые поверхности: фон всегда ночной, самая светлая поверхность — bg-raise."
+    ]
+  }
+}

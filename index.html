@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GLOSSWORK — детейлинг-студия</title>
+  <meta name="description" content="GLOSSWORK — детейлинг-студия: полировка и керамика, оклейка плёнкой, детейлинг-мойка и химчистка. Круглосуточная мойка 24/7. Оставьте заявку — перезвоним и подберём время.">
+  <meta name="theme-color" content="#060907">
+  <link rel="preload" href="assets/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/car-m4.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#zapis">К форме записи</a>
+
+  <!-- Каллиграфия на заднем плане: три кольца, каждое крутится по-своему -->
+  <div class="gf" aria-hidden="true">
+    <div class="gf__stage">
+      <img class="gf__l gf__l--outer" src="assets/graffiti-outer.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
+      <img class="gf__l gf__l--mid" src="assets/graffiti-mid.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
+      <img class="gf__l gf__l--center" src="assets/graffiti-center.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <header class="nav" id="top">
+    <a class="nav__logo" href="#top" aria-label="GLOSSWORK — на главную">
+      <svg class="nav__mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M9 21.5 20.5 10M14.5 23 23 14.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span data-roll>GLOSSWORK</span>
+    </a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="#uslugi" data-roll>Услуги</a>
+      <a href="#process" data-roll>Как работаем</a>
+      <a href="#kontakty" data-roll>Контакты</a>
+    </nav>
+    <a class="btn btn--line nav__cta" href="#zapis"><span data-roll>Записаться</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <svg class="tunnel" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="tg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+            <stop offset="0" stop-color="#0c5a3e"/>
+            <stop offset="0.38" stop-color="#2fd596"/>
+            <stop offset="0.55" stop-color="#8af5c8"/>
+            <stop offset="0.8" stop-color="#16885f"/>
+            <stop offset="1" stop-color="#093a29"/>
+          </linearGradient>
+          <g id="bars"></g>
+        </defs>
+        <use href="#bars" class="tunnel__halo-wide"/>
+        <use href="#bars" class="tunnel__halo"/>
+        <use href="#bars" class="tunnel__core"/>
+      </svg>
+
+      <h1 class="hero__title" id="hero-title"><span class="hero__word" aria-hidden="true">GLOSSWORK</span><span class="sr">GLOSSWORK — детейлинг-студия</span></h1>
+
+      <div class="car" data-car>
+        <div class="car__frame">
+          <div class="car__stage">
+          <!-- Подиум: машина стоит на нём, вместе со стенами бокса -->
+          <svg class="platform" viewBox="0 0 1150 560" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="pf-top" cx="50%" cy="40%" r="62%"><stop offset="0" stop-color="#18301f"/><stop offset=".65" stop-color="#0b1712"/><stop offset="1" stop-color="#060c09"/></radialGradient>
+              <linearGradient id="pf-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101d16"/><stop offset="1" stop-color="#030504"/></linearGradient>
+              <filter id="pf-blur" x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation="7"/></filter>
+              <filter id="pf-blur-sm" x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
+              <filter id="pf-shadow" x="-30%" y="-150%" width="160%" height="400%"><feGaussianBlur stdDeviation="9"/></filter>
+              <filter id="pf-shadow-sm" x="-30%" y="-150%" width="160%" height="400%"><feGaussianBlur stdDeviation="4"/></filter>
+            </defs>
+            <!-- подиум снят под тем же углом, что и машина на фото: колёса стоят на его поверхности -->
+            <ellipse cx="625" cy="430" rx="575" ry="92" fill="#2fd596" opacity=".1" filter="url(#pf-blur)"/>
+            <path d="M100 380 A525 108 0 0 0 1150 380 L1150 404 A525 108 0 0 1 100 404 Z" fill="url(#pf-side)"/>
+            <path class="platform__led" d="M100 404 A525 108 0 0 0 1150 404" fill="none" stroke="#2fd596" stroke-width="6" opacity=".45" filter="url(#pf-blur-sm)"/>
+            <path d="M100 404 A525 108 0 0 0 1150 404" fill="none" stroke="#7cf0c0" stroke-width="1.6" opacity=".7"/>
+            <ellipse cx="625" cy="380" rx="525" ry="108" fill="url(#pf-top)"/>
+            <ellipse cx="625" cy="380" rx="435" ry="89" fill="none" stroke="#48dba0" stroke-opacity=".09" stroke-width="2"/>
+            <ellipse cx="625" cy="380" rx="335" ry="69" fill="none" stroke="#48dba0" stroke-opacity=".07" stroke-width="2"/>
+            <ellipse class="platform__led" cx="625" cy="380" rx="525" ry="108" fill="none" stroke="#2fd596" stroke-width="7" opacity=".4" filter="url(#pf-blur-sm)"/>
+            <ellipse cx="625" cy="380" rx="525" ry="108" fill="none" stroke="#9bf7d3" stroke-width="1.8" opacity=".75"/>
+            <!-- тень машины и пятна контакта под колёсами -->
+            <ellipse cx="600" cy="392" rx="430" ry="54" fill="#000" opacity=".55" filter="url(#pf-shadow)"/>
+            <ellipse cx="612" cy="428" rx="66" ry="10" fill="#000" opacity=".8" filter="url(#pf-shadow-sm)"/>
+            <ellipse cx="1002" cy="349" rx="48" ry="8" fill="#000" opacity=".75" filter="url(#pf-shadow-sm)"/>
+            <ellipse cx="180" cy="406" rx="84" ry="11" fill="#000" opacity=".6" filter="url(#pf-shadow-sm)"/>
+          </svg>
+          <div class="car__body">
+            <img class="car__img" src="assets/car-m4.webp" alt="Зелёный BMW M4 Competition на подиуме в студии" width="1150" height="498" fetchpriority="high">
+            <!-- Габариты: только фары. Выключены — тёмные, включены — оранжевые. -->
+            <svg class="drl" viewBox="0 0 1150 498" aria-hidden="true" focusable="false">
+              <defs>
+                <g id="drl-paths" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M351 266 L359 273 L405 271 L420 257"/>
+                  <path d="M424 263 L432 269 L484 265 L504 242"/>
+                  <path d="M352 250 H368"/>
+                  <path d="M47 247 L54 255 L60 259 L68 261"/>
+                  <path d="M58 247 Q66 243 75 247"/>
+                </g>
+                <filter id="drl-blur-lg" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="9"/></filter>
+                <filter id="drl-blur-md" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3.2"/></filter>
+              </defs>
+              <use href="#drl-paths" class="drl__off" stroke="#1a201d" stroke-width="5.5"/>
+              <g class="drl__on">
+                <use href="#drl-paths" class="drl__halo" stroke="#ff7a12" stroke-width="22" filter="url(#drl-blur-lg)"/>
+                <use href="#drl-paths" class="drl__mid" stroke="#ff9a2e" stroke-width="8" filter="url(#drl-blur-md)"/>
+                <use href="#drl-paths" class="drl__core" stroke="#ffd58a" stroke-width="3"/>
+              </g>
+            </svg>
+          </div>
+          </div>
+        </div>
+        <p class="car__hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9.5 5.5C5.5 5.5 3 8.4 3 12s2.5 6.5 6.5 6.5h1V5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 8h7M14 12h7M14 16h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span class="car__hint-fine">Наведите на машину — зажжём габариты</span>
+          <span class="car__hint-touch">Нажмите на машину или листайте — зажжём габариты</span>
+        </p>
+      </div>
+
+      <div class="hero__side">
+        <p class="hero__kicker"><span class="plate">Детейлинг-студия.</span></p>
+        <p class="hero__247"><span class="hero__pulse" aria-hidden="true"></span>Круглосуточно <b>24/7</b></p>
+        <ul class="hero__svc" role="list" aria-label="Услуги мойки">
+        <li>Мойка кузова активной пеной</li>
+        <li>Чистка салона с&nbsp;влажной уборкой</li>
+        <li>Экспресс-мойка кузова</li>
+        <li>Комплекс</li>
+        <li>Люкс</li>
+        <li>Кварц</li>
+        </ul>
+      </div>
+
+      <ul class="amen" role="list" aria-label="В студии">
+        <li><a class="amen__card amen__card--tea" href="#lounge" data-tilt>
+          <span class="amen__label">Чай и кофе</span>
+          <svg class="amen__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          <img class="amen__cup" src="assets/coffee-cup.webp" alt="" width="559" height="761" loading="eager" decoding="async">
+          <span class="amen__foot">В&nbsp;студии</span>
+        </a></li>
+        <li><a class="amen__card amen__card--rest" href="#lounge" data-tilt>
+          <svg class="amen__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2M3 13.5a2 2 0 0 1 4 0V15h10v-1.5a2 2 0 0 1 4 0V18H3zM6 18v2M18 18v2"/></svg>
+          <span class="amen__cap">Пока моем машину</span>
+          <span class="amen__big">Зона отдыха</span>
+        </a></li>
+      </ul>
+    </section>
+
+    <section class="services" id="uslugi" aria-labelledby="uslugi-title">
+      <div class="wrap">
+        <h2 class="h2" id="uslugi-title">Что делаем <span class="plate">с&nbsp;машиной</span></h2>
+        <p class="section__lede">Листайте, чтобы посмотреть каждую услугу. Нажмите на карточку, и&nbsp;услуга сразу отметится в&nbsp;форме записи. Если не знаете, что нужно, просто оставьте заявку: посмотрим машину и подскажем.</p>
+      </div>
+      <div class="stack" role="list">
+        <article class="scard" role="listitem" style="--i:0">
+          <a class="scard__card" href="#zapis" data-service="Полировка">
+            <figure class="scard__media"><img src="assets/services/polish.webp" alt="Полировка кузова: мастер за работой" loading="eager" fetchpriority="low" decoding="async" style="object-position:50% 52%"><figcaption>Кузов</figcaption></figure>
+            <div class="scard__body">
+              <p class="scard__num"><b>01</b> / 05</p>
+              <h3 class="scard__title">Полировка кузова</h3>
+              <p class="scard__text">Убираем голограммы, «паутинку» и&nbsp;мелкие царапины, возвращаем глубину цвета. Восстановительная или защитная, по&nbsp;состоянию лака.</p>
+              <span class="scard__cta"><span data-roll>Записаться на услугу</span> <span class="svc__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+        <article class="scard" role="listitem" style="--i:1">
+          <a class="scard__card" href="#zapis" data-service="Керамика">
+            <figure class="scard__media"><img src="assets/services/ceramic.webp" alt="Керамическое покрытие: мастер за работой" loading="eager" fetchpriority="low" decoding="async" style="object-position:50% 50%"><figcaption>Защита лака</figcaption></figure>
+            <div class="scard__body">
+              <p class="scard__num"><b>02</b> / 05</p>
+              <h3 class="scard__title">Керамическое покрытие</h3>
+              <p class="scard__text">Твёрдый защитный слой поверх лака: держит блеск, отталкивает воду и&nbsp;грязь, машину проще мыть.</p>
+              <span class="scard__cta"><span data-roll>Записаться на услугу</span> <span class="svc__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+        <article class="scard" role="listitem" style="--i:2">
+          <a class="scard__card" href="#zapis" data-service="Плёнка">
+            <figure class="scard__media"><img src="assets/services/film.webp" alt="Оклейка плёнкой: мастер за работой" loading="eager" fetchpriority="low" decoding="async" style="object-position:55% 45%"><figcaption>Защита кузова</figcaption></figure>
+            <div class="scard__body">
+              <p class="scard__num"><b>03</b> / 05</p>
+              <h3 class="scard__title">Оклейка плёнкой</h3>
+              <p class="scard__text">Полиуретановая антигравийная плёнка на&nbsp;зоны риска или кузов целиком. Матовые и&nbsp;цветные плёнки для смены образа.</p>
+              <span class="scard__cta"><span data-roll>Записаться на услугу</span> <span class="svc__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+        <article class="scard" role="listitem" style="--i:3">
+          <a class="scard__card" href="#zapis" data-service="Мойка пеной">
+            <figure class="scard__media"><img src="assets/services/wash.webp" alt="Детейлинг-мойка: мастер за работой" loading="eager" fetchpriority="low" decoding="async" style="object-position:50% 46%"><figcaption>Мойка</figcaption></figure>
+            <div class="scard__body">
+              <p class="scard__num"><b>04</b> / 05</p>
+              <h3 class="scard__title">Детейлинг-мойка</h3>
+              <p class="scard__text">Бережная двухфазная мойка, очистка от&nbsp;битума и&nbsp;металлических вкраплений, сушка без разводов.</p>
+              <span class="scard__cta"><span data-roll>Записаться на услугу</span> <span class="svc__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+        <article class="scard" role="listitem" style="--i:4">
+          <a class="scard__card" href="#zapis" data-service="Химчистка">
+            <figure class="scard__media"><img src="assets/services/interior.webp" alt="Химчистка салона: мастер за работой" loading="eager" fetchpriority="low" decoding="async" style="object-position:50% 45%"><figcaption>Салон</figcaption></figure>
+            <div class="scard__body">
+              <p class="scard__num"><b>05</b> / 05</p>
+              <h3 class="scard__title">Химчистка салона</h3>
+              <p class="scard__text">Сиденья, потолок, ковры и&nbsp;пластик. Очистка и&nbsp;уход за&nbsp;кожей, чтобы она не&nbsp;сохла и&nbsp;не&nbsp;трескалась.</p>
+              <span class="scard__cta"><span data-roll>Записаться на услугу</span> <span class="svc__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <h2 class="h2" id="process-title">Под светом <span class="plate">видно всё</span></h2>
+        <p class="section__lede">Поэтому машину смотрим под студийным светом трижды: до работы, во&nbsp;время и&nbsp;перед выдачей.</p>
+        <ol class="steps" role="list">
+          <li class="step"><span class="step__lamp" aria-hidden="true"></span><span class="step__n">1</span><h3>Осмотр</h3><p>Смотрим машину под светом, оцениваем состояние лака, согласуем объём работ и&nbsp;сроки.</p></li>
+          <li class="step"><span class="step__lamp" aria-hidden="true"></span><span class="step__n">2</span><h3>Подготовка</h3><p>Мойка, очистка от&nbsp;въевшихся загрязнений, защита уплотнителей и&nbsp;пластика.</p></li>
+          <li class="step"><span class="step__lamp" aria-hidden="true"></span><span class="step__n">3</span><h3>Работа</h3><p>Полировка, покрытие или оклейка: ровно то, что согласовали на&nbsp;осмотре.</p></li>
+          <li class="step"><span class="step__lamp" aria-hidden="true"></span><span class="step__n">4</span><h3>Контроль</h3><p>Проверяем результат под разными источниками света, доводим то, что видно.</p></li>
+          <li class="step"><span class="step__lamp" aria-hidden="true"></span><span class="step__n">5</span><h3>Выдача</h3><p>Показываем машину и&nbsp;рассказываем, как ухаживать за&nbsp;ней дальше.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lounge" id="lounge" aria-labelledby="lounge-title">
+      <div class="wrap lounge__grid">
+        <div class="lounge__copy" data-depth>
+          <h2 class="h2" id="lounge-title">Пока работаем, <span class="plate">отдыхайте</span></h2>
+          <p class="section__lede">В студии есть зона отдыха и кофе: можно спокойно подождать, пока мы занимаемся машиной.</p>
+          <ul class="perks" role="list">
+            <li><span class="perks__dot" aria-hidden="true"></span>Зона отдыха с диваном</li>
+            <li><span class="perks__dot" aria-hidden="true"></span>Кофе в студии</li>
+            <li><span class="perks__dot" aria-hidden="true"></span><span class="tbd">[Wi-Fi, чай, другое: уточнить]</span></li>
+          </ul>
+        </div>
+        <div class="scene" data-scene data-depth role="img" aria-label="Зона отдыха: диван, торшер, столик с чашкой кофе">
+          <div class="scene__stage">
+            <svg class="sc sc--back" viewBox="0 0 640 520" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="sc-strip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c5a3e"/><stop offset=".5" stop-color="#7cf0c0"/><stop offset="1" stop-color="#0c5a3e"/></linearGradient>
+                <linearGradient id="sc-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c1712"/><stop offset="1" stop-color="#050806"/></linearGradient>
+                <filter id="sc-glow" x="-40%" y="-80%" width="180%" height="260%"><feGaussianBlur stdDeviation="4"/></filter>
+              </defs>
+              <rect width="640" height="520" fill="#08100c"/>
+              <rect y="392" width="640" height="128" fill="url(#sc-floor)"/>
+              <g class="sc__strips">
+                <rect x="48" y="40" width="7" height="340" rx="3.5" fill="url(#sc-strip)"/>
+                <rect x="96" y="70" width="5" height="310" rx="2.5" fill="url(#sc-strip)" opacity=".6"/>
+                <rect x="585" y="40" width="7" height="340" rx="3.5" fill="url(#sc-strip)"/>
+                <rect x="539" y="70" width="5" height="310" rx="2.5" fill="url(#sc-strip)" opacity=".6"/>
+                <rect x="48" y="400" width="7" height="90" rx="3.5" fill="#2fd596" opacity=".22"/>
+                <rect x="585" y="400" width="7" height="90" rx="3.5" fill="#2fd596" opacity=".22"/>
+              </g>
+              <rect x="170" y="96" width="300" height="190" rx="14" fill="#060c09" stroke="#0e5a3e" stroke-width="2"/>
+              <g stroke="#7cf0c0" stroke-linecap="round" opacity=".75">
+                <path d="M190 150h260M200 176h240M214 202h212M230 228h180M248 254h144" stroke-width="3"/>
+              </g>
+              <g class="neon">
+                <text x="320" y="70" text-anchor="middle" class="neon__txt neon__txt--glow" filter="url(#sc-glow)">КОФЕ</text>
+                <text x="320" y="70" text-anchor="middle" class="neon__txt">КОФЕ</text>
+              </g>
+            </svg>
+            <svg class="sc sc--mid" viewBox="0 0 640 520" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="sc-cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb347" stop-opacity=".62"/><stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/></linearGradient>
+              </defs>
+              <polygon class="sc__cone" points="480,256 566,256 628,414 418,414" fill="url(#sc-cone)"/>
+              <path d="M523 262V404" stroke="#26352d" stroke-width="5" stroke-linecap="round"/>
+              <path d="M492 404h62" stroke="#26352d" stroke-width="6" stroke-linecap="round"/>
+              <path class="sc__shade" d="M488 218h70l16 40h-102z" fill="#1c2a23" stroke="#2a3d33" stroke-width="2" stroke-linejoin="round"/>
+              <ellipse class="sc__bulb" cx="523" cy="259" rx="30" ry="5" fill="#ffd58a"/>
+              <rect x="136" y="292" width="340" height="62" rx="16" fill="#0b5a3f"/>
+              <rect x="124" y="318" width="52" height="86" rx="18" fill="#0f7550"/>
+              <rect x="436" y="318" width="52" height="86" rx="18" fill="#0f7550"/>
+              <rect x="150" y="334" width="312" height="62" rx="14" fill="#13915f"/>
+              <path d="M170 346h272" stroke="#2fd596" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+              <path d="M146 404v12M466 404v12" stroke="#1a2a22" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+            <svg class="sc sc--front" viewBox="0 0 640 520" aria-hidden="true" focusable="false">
+              <ellipse cx="320" cy="468" rx="136" ry="22" fill="#000" opacity=".5"/>
+              <path d="M262 452v36M378 452v36" stroke="#1d2e25" stroke-width="7" stroke-linecap="round"/>
+              <ellipse cx="320" cy="448" rx="136" ry="22" fill="#14231b" stroke="#25402f" stroke-width="2"/>
+              <ellipse cx="320" cy="443" rx="124" ry="16" fill="#1a2d23"/>
+              <ellipse cx="312" cy="440" rx="30" ry="7" fill="#e8efe9"/>
+              <path d="M290 410h44v18a22 20 0 0 1-44 0z" fill="#f4f7f4"/>
+              <path d="M334 416h6a9 9 0 0 1 0 18h-8" fill="none" stroke="#f4f7f4" stroke-width="5" stroke-linecap="round"/>
+              <ellipse cx="312" cy="411" rx="22" ry="4.5" fill="#3a2418"/>
+              <g class="sc__steam" fill="none" stroke="#cfe6da" stroke-width="3" stroke-linecap="round" opacity=".55">
+                <path class="st st--1" d="M302 398c-8-12 8-18 0-32"/>
+                <path class="st st--2" d="M314 396c-8-12 8-18 0-34"/>
+                <path class="st st--3" d="M326 398c-8-12 8-18 0-30"/>
+              </g>
+              <g fill="#0f7550">
+                <path d="M30 520c-6-60 8-110 30-140 6 54 0 104-14 140z"/>
+                <path d="M62 520c-2-52 14-92 44-112-10 46-14 80-22 112z" fill="#0b5a3f"/>
+                <path d="M14 520c-14-34-6-70 14-96 0 36 0 64 8 96z" fill="#14956a"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="zapis" aria-labelledby="zapis-title">
+      <div class="wrap booking__grid">
+        <div class="booking__copy">
+          <h2 class="h2" id="zapis-title">Запишите <span class="plate">машину</span></h2>
+          <p class="section__lede">Оставьте телефон: перезвоним, уточним задачу и&nbsp;подберём удобное время. Услуги можно отметить сразу или решить вместе на&nbsp;осмотре.</p>
+        </div>
+        <form class="book" data-form="full" novalidate>
+          <div class="book__row">
+            <div class="field">
+              <label for="f-name">Имя</label>
+              <input id="f-name" name="name" type="text" autocomplete="given-name" required>
+              <p class="field__err" id="f-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Телефон</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+              <p class="field__err" id="f-phone-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-car">Машина <span class="opt">необязательно</span></label>
+            <input id="f-car" name="car" type="text" placeholder="Марка и модель">
+          </div>
+          <fieldset class="chips">
+            <legend>Услуги <span class="opt">необязательно</span></legend>
+            <label class="chip"><input type="checkbox" name="service" value="Экспресс-мойка"><span class="chip__face"><span data-roll>Экспресс-мойка</span></span><span class="chip__price">от&nbsp;700&nbsp;₽</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Мойка пеной"><span class="chip__face"><span data-roll>Мойка пеной</span></span><span class="chip__price">от&nbsp;1&nbsp;300&nbsp;₽</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Чистка салона"><span class="chip__face"><span data-roll>Чистка салона</span></span><span class="chip__price">от&nbsp;1&nbsp;000&nbsp;₽</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Комплекс"><span class="chip__face"><span data-roll>Комплекс</span></span><span class="chip__price">от&nbsp;2&nbsp;000&nbsp;₽</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Люкс"><span class="chip__face"><span data-roll>Люкс</span></span><span class="chip__price">от&nbsp;2&nbsp;500&nbsp;₽</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Кварц"><span class="chip__face"><span data-roll>Кварц</span></span><span class="chip__price">от&nbsp;800&nbsp;₽</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Полировка"><span class="chip__face"><span data-roll>Полировка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Керамика"><span class="chip__face"><span data-roll>Керамика</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Плёнка"><span class="chip__face"><span data-roll>Плёнка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Химчистка"><span class="chip__face"><span data-roll>Химчистка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+          </fieldset>
+          <div class="field">
+            <label for="f-note">Комментарий <span class="opt">необязательно</span></label>
+            <textarea id="f-note" name="note" rows="3" placeholder="Например: сколы на капоте, хочу защитить перед дальней поездкой"></textarea>
+          </div>
+          <!-- ловушка для спам-ботов: человек это поле не видит и не заполняет -->
+          <div class="hp" aria-hidden="true"><label>Компания <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+          <div class="book__foot">
+            <button class="btn btn--solid btn--lg" type="submit"><span data-roll>Отправить заявку</span></button>
+            <p class="book__legal">Нажимая кнопку, вы соглашаетесь на обработку персональных данных по <a class="tbd" href="#">[политике конфиденциальности]</a>.</p>
+          </div>
+          <p class="form__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" id="kontakty">
+    <div class="wrap foot__grid">
+      <div class="foot__col">
+        <h2 class="foot__h">Студия</h2>
+        <p><span class="tbd">[город, адрес студии]</span></p>
+        <p>Круглосуточно, 24/7</p>
+      </div>
+      <div class="foot__col">
+        <h2 class="foot__h">Связаться</h2>
+        <p><span class="tbd">[телефон]</span></p>
+        <p><a href="#zapis" data-roll>Оставить заявку</a></p>
+      </div>
+      <div class="foot__col">
+        <h2 class="foot__h">Разделы</h2>
+        <p><a href="#uslugi" data-roll>Услуги</a></p>
+        <p><a href="#process" data-roll>Как работаем</a></p>
+      </div>
+    </div>
+    <p class="foot__word" aria-hidden="true">GLOSSWORK</p>
+    <!-- Контур названия: обводка общего силуэта букв, без внутренних линий шрифта -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <filter id="wm-outline" x="-3%" y="-20%" width="106%" height="140%" color-interpolation-filters="sRGB">
+        <feMorphology in="SourceAlpha" operator="dilate" radius="1.3" result="grow"/>
+        <feComposite in="grow" in2="SourceAlpha" operator="out" result="ring"/>
+        <feFlood flood-color="#a6f7d6"/>
+        <feComposite in2="ring" operator="in"/>
+      </filter>
+    </svg>
+  </footer>
+
+  <!-- Окно после успешной заявки -->
+  <dialog class="done" id="done" aria-labelledby="done-title" aria-describedby="done-text">
+    <div class="done__card">
+      <svg class="done__check" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+        <circle class="done__ring" cx="40" cy="40" r="34"/>
+        <path class="done__tick" d="M26 41 L36 51 L55 31"/>
+      </svg>
+      <h2 class="done__title" id="done-title">Заявка принята!</h2>
+      <p class="done__text" id="done-text">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+      <button class="btn btn--solid done__btn" type="button" data-close><span data-roll>Отлично</span></button>
+    </div>
+  </dialog>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
