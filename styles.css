@@ -441,7 +441,9 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
   font-size: 0.95rem;
   transition: background-color 0.3s var(--ease-out), border-color 0.3s;
 }
-.chip:hover .chip__face { border-color: var(--green-300); }
+@media (hover: hover) {
+  .chip:hover .chip__face { border-color: var(--green-300); }
+}
 .chip input:checked + .chip__face { background: var(--green-600); border-color: var(--green-600); color: #fff; }
 .chip input:focus-visible + .chip__face { outline: 2px solid var(--green-300); outline-offset: 3px; }
 /* Price tag: pops up over the chip with the same amber as the M4 running lights */
@@ -461,9 +463,12 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
   background: rgba(30, 15, 4, 0.94); border-right: 1px solid #ff9a2e; border-bottom: 1px solid #ff9a2e;
 }
 .chip__price--tbd { font: 500 0.8rem/1 var(--body); letter-spacing: 0; color: #e9cfa6; }
-.chip:hover .chip__price, .chip:has(input:focus-visible) .chip__price {
+.chip:has(input:focus-visible) .chip__price {
   opacity: 1; translate: -50% 0; scale: 1;
   animation: neon 0.9s steps(1, end);
+}
+@media (hover: hover) {
+  .chip:hover .chip__price { opacity: 1; translate: -50% 0; scale: 1; animation: neon 0.9s steps(1, end); }
 }
 @media (hover: none) {
   .chip:has(input:checked) .chip__price { opacity: 1; translate: -50% 0; scale: 1; animation: neon 0.9s steps(1, end); }
@@ -601,15 +606,17 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
   .nav { padding-top: 16px; }
   .nav__links { display: none; }
   .nav__cta { margin-left: auto; height: 40px; padding: 0 16px; font-size: 0.85rem; }
-  .hero { padding-top: 92px; }
-  .hero__title { font-size: 17.4vw; }
-  .car { padding-top: 8px; }
+  .hero { padding-top: 88px; }
+  .hero__word, .hero__title::before { display: none; }
+  .hero__side { grid-row: 2; margin-top: 6px; }
+  .car { grid-row: 3; padding-top: 26px; }
   .car__frame { width: 96vw; max-width: none; }
   .hero__svc { grid-template-columns: 1fr; font-size: 1.3rem; }
-  .amen { grid-row: 5; width: auto; justify-self: stretch; grid-template-columns: 1fr 1fr; }
+  .amen { grid-row: 4; width: auto; justify-self: stretch; grid-template-columns: 1fr 1fr; margin-top: 18px; }
   .amen__card--tea, .amen__card--rest { height: 160px; }
   .amen__big { font-size: 1.2rem; }
   .gf__stage { width: 150vw; }
+  .services { padding-top: 72px; }
   .scard { top: calc(12px + var(--i) * 10px); height: auto; margin-bottom: 7vh; }
   .scard__card { grid-template-columns: 1fr; grid-template-rows: 58vw auto; }
   .scard__body { border-left: 0; border-top: 1px solid var(--line); padding: 20px; }
