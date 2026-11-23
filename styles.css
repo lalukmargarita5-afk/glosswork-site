@@ -431,8 +431,26 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
 .field__err { min-height: 0; font-size: 0.85rem; color: var(--danger); }
 .field__err:empty { display: none; }
 
-.chips { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.chips legend { margin-bottom: 10px; padding: 0; }
+.chips { border: 0; margin: 0; padding: 0; display: grid; }
+.chips legend { margin-bottom: 6px; padding: 0; }
+/* services grouped by what happens to the car: wash, interior, detailing */
+.chips__group {
+  display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: start; gap: 10px 14px;
+  padding: 14px 0;
+}
+.chips__group + .chips__group { border-top: 1px solid var(--line); }
+.chips__cap {
+  padding-top: 13px;
+  font: 500 0.74rem/1.2 var(--display); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--green-300);
+}
+.chips__cap em { display: block; margin-top: 4px; font-style: normal; letter-spacing: 0.1em; color: var(--muted); }
+.chips__row { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 520px) {
+  .chips__group { grid-template-columns: 1fr; gap: 10px; }
+  .chips__cap { padding-top: 0; }
+  .chips__cap em { display: inline; margin: 0 0 0 6px; }
+}
 .chip { position: relative; cursor: pointer; }
 .chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
 .chip__face {

@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#060907">
   <link rel="preload" href="assets/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/car-m4.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="styles.css?v=20261123b">
+  <link rel="stylesheet" href="styles.css?v=20261123c">
 </head>
 <body>
   <a class="skip" href="#zapis">К форме записи</a>
@@ -325,16 +325,31 @@
           </div>
           <fieldset class="chips">
             <legend>Услуги <span class="opt">необязательно</span></legend>
-            <label class="chip"><input type="checkbox" name="service" value="Экспресс-мойка"><span class="chip__face"><span data-roll>Экспресс-мойка</span></span><span class="chip__price">от&nbsp;700&nbsp;₽</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Мойка пеной"><span class="chip__face"><span data-roll>Мойка пеной</span></span><span class="chip__price">от&nbsp;1&nbsp;300&nbsp;₽</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Чистка салона"><span class="chip__face"><span data-roll>Чистка салона</span></span><span class="chip__price">от&nbsp;1&nbsp;000&nbsp;₽</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Комплекс"><span class="chip__face"><span data-roll>Комплекс</span></span><span class="chip__price">от&nbsp;2&nbsp;000&nbsp;₽</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Люкс"><span class="chip__face"><span data-roll>Люкс</span></span><span class="chip__price">от&nbsp;2&nbsp;500&nbsp;₽</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Кварц"><span class="chip__face"><span data-roll>Кварц</span></span><span class="chip__price">от&nbsp;800&nbsp;₽</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Полировка"><span class="chip__face"><span data-roll>Полировка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Керамика"><span class="chip__face"><span data-roll>Керамика</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Плёнка"><span class="chip__face"><span data-roll>Плёнка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
-            <label class="chip"><input type="checkbox" name="service" value="Химчистка"><span class="chip__face"><span data-roll>Химчистка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+            <div class="chips__group" role="group" aria-label="Мойка">
+              <span class="chips__cap" aria-hidden="true">Мойка <em>24/7</em></span>
+              <div class="chips__row">
+                <label class="chip"><input type="checkbox" name="service" value="Экспресс-мойка"><span class="chip__face"><span data-roll>Экспресс-мойка</span></span><span class="chip__price">от&nbsp;700&nbsp;₽</span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Мойка пеной"><span class="chip__face"><span data-roll>Мойка пеной</span></span><span class="chip__price">от&nbsp;1&nbsp;300&nbsp;₽</span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Комплекс"><span class="chip__face"><span data-roll>Комплекс</span></span><span class="chip__price">от&nbsp;2&nbsp;000&nbsp;₽</span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Люкс"><span class="chip__face"><span data-roll>Люкс</span></span><span class="chip__price">от&nbsp;2&nbsp;500&nbsp;₽</span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Кварц"><span class="chip__face"><span data-roll>Кварц</span></span><span class="chip__price">от&nbsp;800&nbsp;₽</span></label>
+              </div>
+            </div>
+            <div class="chips__group" role="group" aria-label="Салон">
+              <span class="chips__cap" aria-hidden="true">Салон</span>
+              <div class="chips__row">
+                <label class="chip"><input type="checkbox" name="service" value="Чистка салона"><span class="chip__face"><span data-roll>Чистка салона</span></span><span class="chip__price">от&nbsp;1&nbsp;000&nbsp;₽</span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Химчистка"><span class="chip__face"><span data-roll>Химчистка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+              </div>
+            </div>
+            <div class="chips__group" role="group" aria-label="Детейлинг">
+              <span class="chips__cap" aria-hidden="true">Детейлинг</span>
+              <div class="chips__row">
+                <label class="chip"><input type="checkbox" name="service" value="Полировка"><span class="chip__face"><span data-roll>Полировка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Керамика"><span class="chip__face"><span data-roll>Керамика</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Плёнка"><span class="chip__face"><span data-roll>Плёнка</span></span><span class="chip__price chip__price--tbd">[цена: уточнить]</span></label>
+              </div>
+            </div>
           </fieldset>
           <div class="field">
             <label for="f-note">Комментарий <span class="opt">необязательно</span></label>
@@ -395,6 +410,6 @@
     </div>
   </dialog>
 
-  <script src="main.js?v=20261123b" defer></script>
+  <script src="main.js?v=20261123c" defer></script>
 </body>
 </html>
