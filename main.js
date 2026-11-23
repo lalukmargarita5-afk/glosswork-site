@@ -3,6 +3,10 @@
   const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbwqrGymk0LtAsOtFy1lLtXBZoj1ME-voMLHkBuqMidM1uhoJOCVn5CgC0buSQ-qDF1sjQ/exec";
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  // phones: a lighter tunnel and a 30 fps idle loop, so the first screen stays smooth
+  const touch = !finePointer;
+  // "reduce motion" (often switched on by battery saver) keeps every effect, just calmer
+  const calm = reduceMotion ? 0.5 : 1;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
   /* ---------- Text roll: split labels into letters ---------- */
@@ -39,8 +43,8 @@
   const grad = svg.querySelector("#tg");
   const NS = "http://www.w3.org/2000/svg";
 
-  const N = 18;
-  const spacing = 0.62;
+  const N = touch ? 13 : 18;
+  const spacing = 11.16 / N;
   const span = N * spacing;
   const NEAR = 1.5;
   const CEIL = [[-1.55, -0.58], [-0.46, 0.46], [0.58, 1.55]];
@@ -97,7 +101,6 @@
   const fadeOnScroll = [...document.querySelectorAll(".hero__side, .amen")];
   const wideHero = matchMedia("(min-width: 1181px)");
   const gf = document.querySelector(".gf");
-  const motion = !reduceMotion;
   const st = { tx: 0, ty: 0, cx: 0, cy: 0, ts: 0, cs: 0, gx: 0, gy: 0, tgx: 0, tgy: 0 };
   let raf = 0;
   // ambient life on the first screen: the tunnel keeps flowing slowly, and on touch screens
@@ -107,16 +110,21 @@
     new IntersectionObserver(([en]) => { heroOn = en.isIntersecting; if (heroOn) kick(); }).observe(hero);
   }
 
+  let needLayout = false;
   function frame(now = performance.now()) {
     raf = 0;
+    const scrolling = Math.abs(st.ts - st.cs) > 0.4;
+    // on phones the idle drift does not need 60 fps; scrolling still runs at full rate
+    if (touch && !scrolling && !needLayout && lastT && now - lastT < 30) { raf = requestAnimationFrame(frame); return; }
+    if (needLayout) { needLayout = false; updateDepth(); updateStack(); }
     const dt = lastT ? Math.min(now - lastT, 50) : 16;
     lastT = now;
-    const ambient = motion && heroOn;
+    const ambient = heroOn;
     if (ambient) {
-      idle += dt * 0.00016;
+      idle += dt * 0.00016 * calm;
       if (!finePointer) {
-        st.tx = Math.sin(now * 0.00042) * 0.5;
-        st.ty = Math.sin(now * 0.00029) * 0.3;
+        st.tx = Math.sin(now * 0.00042) * 0.5 * calm;
+        st.ty = Math.sin(now * 0.00029) * 0.3 * calm;
       }
     }
     st.cx += (st.tx - st.cx) * 0.08;
@@ -155,12 +163,11 @@
   drawTunnel(0, 0, 0);
   addEventListener("resize", () => { sizeTunnel(); kick(); }, { passive: true });
 
-  if (motion) {
-    st.cs = st.ts = scrollY;
-    addEventListener("scroll", () => { st.ts = scrollY; updateDepth(); updateStack(); kick(); }, { passive: true });
-    kick();
-  }
-  if (motion && finePointer) {
+  st.cs = st.ts = scrollY;
+  // layout is read once per frame inside frame(), not on every scroll event
+  addEventListener("scroll", () => { st.ts = scrollY; needLayout = true; kick(); }, { passive: true });
+  kick();
+  if (finePointer) {
     hero.addEventListener("pointermove", (e) => {
       st.tx = (e.clientX / innerWidth) * 2 - 1;
       st.ty = (e.clientY / innerHeight) * 2 - 1;
@@ -176,13 +183,13 @@
   }
 
   /* ---------- Scroll depth: blocks approach the viewer as they enter ---------- */
-  const depthEls = motion
-    ? [...document.querySelectorAll("[data-depth], .services .wrap, .process .wrap > .h2, .process .section__lede, .steps, .booking__copy, .book")]
-    : [];
+  const depthEls = [...document.querySelectorAll("[data-depth], .services .wrap, .process .wrap > .h2, .process .section__lede, .steps, .booking__copy, .book")];
   function updateDepth() {
     const vh = innerHeight;
-    depthEls.forEach((el) => {
-      const top = el.getBoundingClientRect().top;
+    // read every position first, then write, so the browser lays out once
+    const tops = depthEls.map((el) => el.getBoundingClientRect().top);
+    depthEls.forEach((el, i) => {
+      const top = tops[i];
       const p = clamp((vh - top) / (vh * 0.5), 0, 1);
       el.style.setProperty("--dp", (1 - (1 - p) * (1 - p)).toFixed(3));
     });
@@ -198,17 +205,18 @@
   const cards = [...document.querySelectorAll(".scard")];
   function updateStack() {
     const vh = innerHeight;
+    const rects = cards.map((c) => c.getBoundingClientRect());
     cards.forEach((c, i) => {
-      const r = c.getBoundingClientRect();
-      const next = cards[i + 1];
+      const r = rects[i];
+      const next = rects[i + 1];
       // how far the next card has slid over this one (0..1)
-      const cover = next ? clamp(1 - (next.getBoundingClientRect().top - r.top) / r.height, 0, 1) : 0;
+      const cover = next ? clamp(1 - (next.top - r.top) / r.height, 0, 1) : 0;
       c.style.setProperty("--cover", cover.toFixed(3));
       // the photo drifts slower than the card while it travels up the screen
       c.style.setProperty("--par", `${(clamp((r.top - vh * 0.2) / vh, -1, 1) * -28).toFixed(1)}px`);
     });
   }
-  if (motion && cards.length) { updateStack(); addEventListener("resize", updateStack, { passive: true }); }
+  if (cards.length) { updateStack(); addEventListener("resize", updateStack, { passive: true }); }
 
   /* ---------- Headlights ---------- */
   const setLit = (on) => {
@@ -230,7 +238,7 @@
   }
 
   /* ---------- Tilt cards (hero amenities) ---------- */
-  if (finePointer && motion) {
+  if (finePointer) {
     document.querySelectorAll("[data-tilt]").forEach((el) => {
       el.addEventListener("pointermove", (e) => {
         const r = el.getBoundingClientRect();
@@ -257,7 +265,7 @@
         scene.style.setProperty("--sx", 0);
         scene.style.setProperty("--sy", 0);
       });
-      if (motion) {
+      {
         scene.addEventListener("pointermove", (e) => {
           const r = scene.getBoundingClientRect();
           scene.style.setProperty("--sx", (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
@@ -273,7 +281,7 @@
 
   /* ---------- Process lamps switch on in sequence ---------- */
   const steps = [...document.querySelectorAll(".step")];
-  if ("IntersectionObserver" in window && !reduceMotion) {
+  if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
         if (!en.isIntersecting) return;

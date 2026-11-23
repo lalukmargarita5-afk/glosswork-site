@@ -631,6 +631,20 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
   .foot__grid { grid-template-columns: 1fr; }
 }
 
+/* Phones: drop the costliest layers on the first screen. A live blur over the moving tunnel and a
+   24px glow stroke on every bar are what made it stutter; the look stays, the cards just get denser glass. */
+@media (hover: none), (pointer: coarse) {
+  .tunnel__halo-wide { display: none; }
+  .tunnel__halo { stroke-width: 9; stroke-opacity: 0.36; }
+  .amen__card--tea {
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    background:
+      radial-gradient(120% 85% at 12% -5%, rgba(255, 255, 255, 0.2), transparent 58%),
+      linear-gradient(160deg, rgba(58, 92, 75, 0.9), rgba(22, 40, 31, 0.94) 58%, rgba(8, 18, 13, 0.96));
+  }
+  .amen__card--rest { -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; transition-delay: 0s !important; }
